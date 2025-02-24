@@ -48,15 +48,9 @@ message CreateUserResponse {
     User user = 1;
 }
 
-message UserByLogin {
-    int64 id = 1;
-    string login = 2;
-    string name = 3;
-    string avatar = 4;
-}
 
 message GetUserByLoginResponse {
-    UserByLogin user = 1;
+    User user = 1;
 }
 
 message GetUserByLoginRequest {
@@ -64,7 +58,7 @@ message GetUserByLoginRequest {
 }
 
 message GetUserByIdResponse {
-    UserByLogin user = 1;
+    User user = 1;
 }
 
 message GetUserByIdRequest {

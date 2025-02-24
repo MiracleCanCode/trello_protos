@@ -12,7 +12,7 @@ service UserService {
 }
 
 message User {
-    int64 id = 1;
+    string id = 1;
     string login = 2;
     string name = 3;
     string avatar = 4;

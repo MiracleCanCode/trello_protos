@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+option go_package = "pkg/api";
+
+package user;
+
+service UserService {
+    rpc GetUserByLogin(GetUserByLoginRequest) returns (GetUserByLoginResponse);
+    rpc GetUserById(GetUserByIdRequest) returns (GetUserByIdResponse);
+    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+    rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+}
+
+message User {
+    int64 id = 1;
+    string login = 2;
+    string name = 3;
+    string avatar = 4;
+    string password = 5;
+}
+
+message UserByCreate {
+    string login = 1;
+    string name = 2;
+    string password = 3;
+}
+
+message UserByUpdate {
+    string login = 1;
+    string name = 2;
+    string password = 3;
+    string avatar = 4;
+}
+
+message UpdateUserRequest {
+    UserByUpdate user = 1;
+}
+
+message UpdateUserResponse {
+    User user = 1;
+}
+
+message CreateUserRequest {
+    UserByCreate user = 1;
+}
+
+message CreateUserResponse {
+    User user = 1;
+}
+
+message UserByLogin {
+    int64 id = 1;
+    string login = 2;
+    string name = 3;
+    string avatar = 4;
+}
+
+message GetUserByLoginResponse {
+    UserByLogin user = 1;
+}
+
+message GetUserByLoginRequest {
+    string login = 1;
+}
+
+message GetUserByIdResponse {
+    UserByLogin user = 1;
+}
+
+message GetUserByIdRequest {
+    int64 id = 1;
+}

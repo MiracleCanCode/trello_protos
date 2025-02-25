@@ -25,15 +25,9 @@ message UserByCreate {
     string password = 3;
 }
 
-message UserByUpdate {
-    string login = 1;
-    string name = 2;
-    string password = 3;
-    string avatar = 4;
-}
 
 message UpdateUserRequest {
-    UserByUpdate user = 1;
+    User user = 1;
 }
 
 message UpdateUserResponse {
@@ -47,7 +41,6 @@ message CreateUserRequest {
 message CreateUserResponse {
     User user = 1;
 }
-
 
 message GetUserByLoginResponse {
     User user = 1;
